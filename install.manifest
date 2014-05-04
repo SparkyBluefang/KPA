@@ -1,0 +1,24 @@
+# ***** BEGIN LICENSE BLOCK *****
+# 
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+# 
+# Copyright (C) 2014 Matthew Turnbull <sparky@bluefang-logic.com>. All Rights Reserved.
+# 
+# ***** END LICENSE BLOCK *****
+
+# RDF metadata
+id=kpa@caligonstudios.com
+version=2014.05.04.05
+type=2
+creator=Sparky Bluefang
+
+# App data
+defaultLocale=en-US
+Firefox=31.0a2|32.0a1
+
+# Build data
+name=kpa
+files=chrome/content chrome.manifest defaults install.rdf LICENSE
+

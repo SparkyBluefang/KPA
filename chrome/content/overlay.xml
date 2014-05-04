@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+   - ***** BEGIN LICENSE BLOCK *****
+   - 
+   - This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/.
+   - 
+   - Copyright (C) 2014 Matthew Turnbull <sparky@bluefang-logic.com>. All Rights Reserved.
+   - 
+   - ***** END LICENSE BLOCK *****
+-->
+
+<bindings id="killpanelanim-bindings"
+          xmlns="http://www.mozilla.org/xbl">
+
+	<binding id="arrowpanel" extends="chrome://global/content/bindings/popup.xml#arrowpanel">
+		<implementation implements="nsIObserver">
+			<field name="_defaultAnimate"/>
+
+			<constructor>
+			<![CDATA[
+				Components.utils.import("resource://gre/modules/Services.jsm");
+				Services.prefs.addObserver("browser.panels.animate", this, false);
+
+				this._defaultAnimate = this.getAttribute("animate");
+				if(!Services.prefs.getBoolPref("browser.panels.animate"))
+				{
+					this.setAttribute("animate", "false");
+				}
+			]]>
+			</constructor>
+			<destructor>
+			<![CDATA[
+				Components.utils.import("resource://gre/modules/Services.jsm");
+				Services.prefs.removeObserver("browser.panels.animate", this);
+			]]>
+			</destructor>
+
+			<!-- nsIObserver -->
+			<method name="observe">
+				<parameter name="aSubject"/>
+				<parameter name="aTopic"/>
+				<parameter name="aData"/>
+				<body>
+				<![CDATA[
+					if(aTopic != "nsPref:changed" || aData != "browser.panels.animate")
+					{
+						return;
+					}
+
+					if(aSubject.getBoolPref(aData))
+					{
+						if(this.getAttribute("animate") == "false")
+						{
+							this.setAttribute("animate", this._defaultAnimate);
+						}
+					}
+					else
+					{
+						this.setAttribute("animate", "false");
+					}
+				]]>
+				</body>
+			</method>
+		</implementation>
+	</binding>
+</bindings>
+
