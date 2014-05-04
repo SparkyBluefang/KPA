@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE overlay>
+
+<!--
+   - ***** BEGIN LICENSE BLOCK *****
+   - 
+   - This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/.
+   - 
+   - Copyright (C) 2014 Matthew Turnbull <sparky@bluefang-logic.com>. All Rights Reserved.
+   - 
+   - ***** END LICENSE BLOCK *****
+-->
+
+<?xml-stylesheet href="chrome://killpanelanim/content/overlay.css" type="text/css" ?>
+
+<overlay id="killpanelanim-overlay"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+	<script type="application/javascript" src="chrome://killpanelanim/content/overlay.js" />
+</overlay>
+

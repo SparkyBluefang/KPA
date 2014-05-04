@@ -8,6 +8,10 @@
 # 
 # ***** END LICENSE BLOCK *****
 
-content killpanelanim chrome/content/
-style   chrome://browser/content/browser.xul chrome://killpanelanim/content/overlay.css
+# Paths
+content  killpanelanim chrome/content/
+resource killpanelanim modules/
+
+# Overlays
+overlay chrome://browser/content/browser.xul chrome://killpanelanim/content/overlay.xul
 

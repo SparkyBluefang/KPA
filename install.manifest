@@ -20,5 +20,5 @@ Firefox=31.0a2|32.0a1
 
 # Build data
 name=kpa
-files=chrome/content chrome.manifest defaults install.rdf LICENSE
+files=chrome/content chrome.manifest defaults install.rdf LICENSE modules
 
