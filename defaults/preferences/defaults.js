@@ -10,5 +10,5 @@
  * ***** END LICENSE BLOCK *****
 */
 
-pref("browser.panels.animate", true);
+pref("browser.panels.animate", false);
 
